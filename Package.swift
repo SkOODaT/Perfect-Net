@@ -27,9 +27,9 @@ let package = Package(
         .library(name: "PerfectNet", targets: ["PerfectNet"])
     ],
     dependencies: [
-        .package(url: "https://github.com/PerfectlySoft/Perfect-Crypto.git", from: "4.0.0"),
-        .package(url: "https://github.com/PerfectlySoft/Perfect-LinuxBridge.git", from: "3.0.0"),
-        .package(url: "https://github.com/PerfectlySoft/Perfect-Thread.git", from: "3.0.0")
+        .package(url: "https://github.com/123FLO321/Perfect-Crypto.git", .branch("swift5")),
+        .package(url: "https://github.com/123FLO321/Perfect-LinuxBridge.git", .branch("swift5")),
+        .package(url: "https://github.com/123FLO321/Perfect-Thread.git", .branch("swift5")),
     ],
     targets: [
         .target(name: "PerfectNet", dependencies: ["PerfectCrypto", "LinuxBridge", "PerfectThread"]),
@@ -46,8 +46,8 @@ let package = Package(
         .library(name: "PerfectNet", targets: ["PerfectNet"])
     ],
     dependencies: [
-        .package(url: "https://github.com/PerfectlySoft/Perfect-Crypto.git", from: "4.0.0"),
-        .package(url: "https://github.com/PerfectlySoft/Perfect-Thread.git", from: "3.0.0")
+        .package(url: "https://github.com/123FLO321/Perfect-Crypto.git", .branch("swift5")),
+        .package(url: "https://github.com/123FLO321/Perfect-Thread.git", .branch("swift5"))
     ],
     targets: [
         .target(name: "PerfectNet", dependencies: ["PerfectCrypto", "PerfectThread"]),
