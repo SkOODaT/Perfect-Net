@@ -41,6 +41,7 @@ public class NetTCP: Net {
 		self.fd.fd = fd
 		self.fd.family = AF_INET
 		self.fd.switchToNonBlocking()
+		signal(SIGPIPE, SIG_IGN)
 	}
 	
 	public override func initSocket(family: Int32) {
