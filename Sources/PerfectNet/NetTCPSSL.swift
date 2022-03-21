@@ -94,7 +94,7 @@ public class NetTCPSSL : NetTCP {
 				return ret
 			}
 			defer {
-				free(mp)
+				free(mp!)
 				EVP_PKEY_free(pk)
 			}
 
