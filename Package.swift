@@ -27,9 +27,9 @@ let package = Package(
         .library(name: "PerfectNet", targets: ["PerfectNet"])
     ],
     dependencies: [
-        .package(url: "https://github.com/123FLO321/Perfect-Crypto.git", .branch("swift5")),
-        .package(url: "https://github.com/123FLO321/Perfect-LinuxBridge.git", .branch("swift5")),
-        .package(url: "https://github.com/123FLO321/Perfect-Thread.git", .branch("swift5")),
+        .package(url: "https://github.com/SkOODaT/Perfect-Crypto.git", .branch("SKOODAT")),
+        .package(url: "https://github.com/SkOODaT/Perfect-LinuxBridge.git", .branch("SKOODAT")),
+        .package(url: "https://github.com/SkOODaT/Perfect-Thread.git", .branch("SKOODAT")),
     ],
     targets: [
         .target(name: "PerfectNet", dependencies: ["PerfectCrypto", "LinuxBridge", "PerfectThread"]),
@@ -46,8 +46,8 @@ let package = Package(
         .library(name: "PerfectNet", targets: ["PerfectNet"])
     ],
     dependencies: [
-        .package(url: "https://github.com/123FLO321/Perfect-Crypto.git", .branch("swift5")),
-        .package(url: "https://github.com/123FLO321/Perfect-Thread.git", .branch("swift5"))
+        .package(url: "https://github.com/SkOODaT/Perfect-Crypto.git", .branch("SKOODAT")),
+        .package(url: "https://github.com/SkOODaT/Perfect-Thread.git", .branch("SKOODAT"))
     ],
     targets: [
         .target(name: "PerfectNet", dependencies: ["PerfectCrypto", "PerfectThread"]),
