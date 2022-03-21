@@ -94,7 +94,7 @@ public struct NetAddress {
 			hints = addrinfo(ai_flags: aiFlags, ai_family: AF_INET6, ai_socktype: type.rawValue, ai_protocol: 0, ai_addrlen: 0, ai_canonname: nil, ai_addr: nil, ai_next: nil)
 			result = getaddrinfo(host, nil, &hints, &resultListPtr)
 		}
-		guard result == 0, var resultList = resultListPtr else {
+		guard result == 0, let resultList = resultListPtr else {
 			return nil
 		}
 		defer {
