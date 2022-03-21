@@ -38,8 +38,8 @@ public class NetNamedPipe : NetTCP {
 	}
 
 	public func sockName() -> (String, UInt16) {
-		var addr = UnsafeMutablePointer<sockaddr_un>.allocate(capacity: 1)
-		var len = UnsafeMutablePointer<socklen_t>.allocate(capacity: 1)
+		let addr = UnsafeMutablePointer<sockaddr_un>.allocate(capacity: 1)
+		let len = UnsafeMutablePointer<socklen_t>.allocate(capacity: 1)
 		defer {
 			addr.deallocate()
 			len.deallocate()
@@ -67,8 +67,8 @@ public class NetNamedPipe : NetTCP {
 	}
 
 	public func peerName() -> (String, UInt16) {
-		var addr = UnsafeMutablePointer<sockaddr_un>.allocate(capacity: 1)
-		var len = UnsafeMutablePointer<socklen_t>.allocate(capacity: 1)
+		let addr = UnsafeMutablePointer<sockaddr_un>.allocate(capacity: 1)
+		let len = UnsafeMutablePointer<socklen_t>.allocate(capacity: 1)
 		defer {
 			addr.deallocate()
 			len.deallocate()
@@ -206,8 +206,8 @@ public class NetNamedPipe : NetTCP {
 	#else
 		var msghdr = UnsafeMutablePointer<Darwin.msghdr>.allocate(capacity: 1)
 	#endif
-		var nothingPtr = UnsafeMutablePointer<iovec>.allocate(capacity: 1)
-		var nothing = UnsafeMutablePointer<CChar>.allocate(capacity: 1)
+		let nothingPtr = UnsafeMutablePointer<iovec>.allocate(capacity: 1)
+		let nothing = UnsafeMutablePointer<CChar>.allocate(capacity: 1)
 		let buffer = UnsafeMutableRawPointer.allocate(byteCount: length, alignment: 8)
 		defer {
 			msghdr.deallocate()
@@ -270,8 +270,8 @@ public class NetNamedPipe : NetTCP {
 	public func receiveFd(callBack cb: @escaping (Int32) -> ()) throws {
 		let length = MemoryLayout<cmsghdr>.size + MemoryLayout<Int32>.size
 		var msghdrr = msghdr()
-		var nothingPtr = UnsafeMutablePointer<iovec>.allocate(capacity: 1)
-		var nothing = UnsafeMutablePointer<CChar>.allocate(capacity: 1)
+		let nothingPtr = UnsafeMutablePointer<iovec>.allocate(capacity: 1)
+		let nothing = UnsafeMutablePointer<CChar>.allocate(capacity: 1)
 		let buffer = UnsafeMutableRawPointer.allocate(byteCount: length, alignment: 8)
 		defer {
 			buffer.deallocate()
