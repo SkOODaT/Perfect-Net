@@ -216,9 +216,9 @@ public class NetTCPSSL : NetTCP {
 	fileprivate func makeSSLCTX() -> UnsafeMutablePointer<SSL_CTX>? {
 		let newSslCtx: UnsafeMutablePointer<SSL_CTX>?
 		switch self.tlsMethod {
-		case .tlsV1_2: newSslCtx = SSL_CTX_new(TLSv1_2_method())
-		case .tlsV1_1: newSslCtx = SSL_CTX_new(TLSv1_1_method())
-		case .tlsV1: newSslCtx = SSL_CTX_new(TLSv1_method())
+		case .tlsV1_2: newSslCtx = SSL_CTX_new(TLS_method())
+		case .tlsV1_1: newSslCtx = SSL_CTX_new(TLS_method())
+		case .tlsV1: newSslCtx = SSL_CTX_new(TLS_method())
 		}
 
 		guard let sslCtx = newSslCtx else {
